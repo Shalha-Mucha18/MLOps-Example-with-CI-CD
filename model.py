@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 # Functions and procedures
 def plot_predictions(train_data, train_labels, test_data, test_labels, predictions):
     """
-    Plots training data, test data and compares predictions.
+    Plots training data, test data, and compares predictions.
     """
     plt.figure(figsize=(6, 5))
     plt.scatter(train_data, train_labels, c="b", label="Training data")   # training data in blue
