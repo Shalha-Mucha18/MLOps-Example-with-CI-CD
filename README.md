@@ -17,8 +17,8 @@ The workflow automates the entire ML pipeline:
 
 1. Clone the repo
 ```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
+https://github.com/Shalha-Mucha18/MLOps-Example-with-CI-CD
+cd MLOps-Example-with-CI-CD
 ```
 2. Install dependencies
 ``` bash
