@@ -1,0 +1,25 @@
+name: mlops-example-tensorflow
+
+on: [push]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    container: ghcr.io/iterative/cml:latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python dependencies and train model
+        env:
+          repo_token: ${{ secrets.CML_PAT }}
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          python model.py
+
+          echo "## Model Metrics" > report.md
+          cat metrics.txt >> report.md
+
+          printf "\n## Model Performance\n" >> report.md
+          echo "Model performance metrics are on the plot below." >> report.md
+          
