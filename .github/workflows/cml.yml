@@ -1,13 +1,13 @@
-name: mlops-example-tensorflow-
+name: mlops-example-tensorflow
 
 on: [push]
 
 jobs:
   run:
     runs-on: ubuntu-latest
-    container: docker://dvcorg/cml-py3:latest
+    container: ghcr.io/iterative/cml:latest
     steps:
-      - uses: actions/checkout@v2.3.6
+      - uses: actions/checkout@v3
 
       - name: Set up Python dependencies and train model
         env:
@@ -16,5 +16,6 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
           python model.py
+
 
 
