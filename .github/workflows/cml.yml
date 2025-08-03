@@ -23,11 +23,4 @@ jobs:
           printf "\n## Model Performance\n" >> report.md
           echo "Model performance metrics are on the plot below." >> report.md
           
-          cml comment --md --token=${repo_token} report.md --publish model_results.png
-          
-          cml comment create --token=${repo_token} report.md
-
-          
-
-
-
+          cml comment create --token=${repo_token} --md --publish model_results.png report.md
