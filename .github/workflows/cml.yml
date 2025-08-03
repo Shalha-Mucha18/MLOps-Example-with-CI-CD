@@ -11,7 +11,7 @@ jobs:
 
       - name: Set up Python dependencies and train model
         env:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.CML_PAT }}
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
@@ -23,9 +23,9 @@ jobs:
           printf "\n## Model Performance\n" >> report.md
           echo "Model performance metrics are on the plot below." >> report.md
           
-          cml-publish model_results.png --md >> report.md
+          cml comment --md --token=${repo_token} --publish model_results.png >> report.md
           
-          cml-send-comment report.md
+          cml comment create --token=${repo_token} report.md
 
           
 
