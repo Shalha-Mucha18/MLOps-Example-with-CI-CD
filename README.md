@@ -15,14 +15,14 @@ The workflow automates the entire ML pipeline:
 
 ## How It Works
 
-1. Push or open a PR
+1. **Push or open a PR**
 
    Every push triggers the GitHub Actions workflow.
-2. Install dependencies & train the model
+2. **Install dependencies & train the model**
 
-   model.py trains a simple TensorFlow model and saves metrics + plots.
+   `model.py` trains a simple TensorFlow model and saves metrics + plots.
 
-4. Publish results
+4. **Publish results**
    Using `cml-publish` and `cml-send-comment`, the workflow posts:
 
     - Metrics from `metrics.txt`
