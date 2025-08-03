@@ -9,9 +9,27 @@ The workflow automates the entire ML pipeline:
 
 ### Features
 - Automated model training using TensorFlow
-- Metrics logging (MAE & MSE) saved to metrics.txt
-- Visualization of predictions using matplotlib
+- Metrics logging (MAE & MSE) saved to `metrics.txt`
+- Visualization of predictions using   `matplotlib`
 - CML-powered PR comments with plots and performance metrics.
+
+## How It Works
+
+1. Push or open a PR
+
+   Every push triggers the GitHub Actions workflow.
+2. Install dependencies & train the model
+
+   model.py trains a simple TensorFlow model and saves metrics + plots.
+
+4. Publish results
+   Using `cml-publish` and `cml-send-comment`, the workflow posts:
+
+    - Metrics from `metrics.txt`
+
+   - Visualization from model_results.png
+
+   - directly to the pull request.
 
 ## Setup
 
