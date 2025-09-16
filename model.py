@@ -64,7 +64,7 @@ model.compile(
 )
 
 # Train the model
-model.fit(X_train, y_train, epochs=100, verbose=0)
+model.fit(X_train, y_train, epochs=10, verbose=0)
 
 # Make predictions
 y_preds = model.predict(X_test)
